@@ -1,3 +1,6 @@
+// Student Management System
+// Author: CodeNestJava
+// Description: Console-based Java application to manage student records
 import java.util.ArrayList;
 import java.util.Scanner;
 
