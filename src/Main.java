@@ -10,9 +10,12 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
+        // List to store all student objects
         ArrayList<Student> students = new ArrayList<>();
 
         while (true) {
+            // Display menu options
             System.out.println("\n===== Student Management System =====");
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
@@ -22,6 +25,7 @@ public class Main {
             int choice = scanner.nextInt();
 
             if (choice == 1) {
+                // Add a new student
                 System.out.print("Enter student name: ");
                 scanner.nextLine(); // consume newline
                 String name = scanner.nextLine();
@@ -29,13 +33,14 @@ public class Main {
                 System.out.print("Enter student ID: ");
                 int id = scanner.nextInt();
 
+                // Create Student object and add to list
                 Student student = new Student(name, id);
                 students.add(student);
 
                 System.out.println("Student added successfully!");
 
             } else if (choice == 2) {
-
+                // Display all students
                 if (students.isEmpty()) {
                     System.out.println("No students found.");
                 } else {
@@ -47,9 +52,11 @@ public class Main {
                 }
 
             } else if (choice == 3) {
+                // Exit the program
                 System.out.println("Exiting program...");
                 break;
             } else {
+                // Invalid menu choice
                 System.out.println("Invalid choice. Try again.");
             }
         }
