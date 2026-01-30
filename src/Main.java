@@ -1,6 +1,7 @@
 // Student Management System
 // Author: CodeNestJava
 // Description: Console-based Java application to manage student records
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,8 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> studentNames = new ArrayList<>();
-        ArrayList<Integer> studentIds = new ArrayList<>();
+        ArrayList<Student> students = new ArrayList<>();
 
         while (true) {
             System.out.println("\n===== Student Management System =====");
@@ -29,20 +29,20 @@ public class Main {
                 System.out.print("Enter student ID: ");
                 int id = scanner.nextInt();
 
-                studentNames.add(name);
-                studentIds.add(id);
+                Student student = new Student(name, id);
+                students.add(student);
 
                 System.out.println("Student added successfully!");
 
             } else if (choice == 2) {
 
-                if (studentNames.isEmpty()) {
+                if (students.isEmpty()) {
                     System.out.println("No students found.");
                 } else {
                     System.out.println("\n--- Student List ---");
-                    for (int i = 0; i < studentNames.size(); i++) {
-                        System.out.println("Name: " + studentNames.get(i) +
-                                ", ID: " + studentIds.get(i));
+                    for (Student student : students) {
+                        System.out.println("Name: " + student.getName() +
+                                ", ID: " + student.getId());
                     }
                 }
 
